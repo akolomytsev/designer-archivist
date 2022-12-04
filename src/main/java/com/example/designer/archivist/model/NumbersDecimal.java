@@ -1,4 +1,4 @@
-package com.example.designer.archivist.controllers.model;
+package com.example.designer.archivist.model;
 
 public class NumbersDecimal {
     private Long id; // id детали (может и не нужен)
@@ -7,6 +7,9 @@ public class NumbersDecimal {
     private int nameOfThePartByShapeMethodOfManufactureAndMaterial; // Три цифры детали по способу изготовления, материалу и форме
     private int numberDetails; // три цифры
     private String nameDetails; // Название детали согласно классификатору
+    // первичное применение
+    // как то вогнать в какие изделия входит
+    //
 
     public NumbersDecimal(Long id, int partTypeByDivisibility, String manufacturer, int nameOfThePartByShapeMethodOfManufactureAndMaterial, int numberDetails, String nameDetails) {
         this.id = id;

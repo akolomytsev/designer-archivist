@@ -24,6 +24,7 @@
             <td>Три цифры детали по способу изготовления, материалу и форме</td>
             <td>Номер детали</td>
             <td>Название детали</td>
+            <td>Действие</td>
         </tr>
         <tbody>
         <tr ng-repeat="s in NumbersList">
@@ -31,16 +32,17 @@
             <td>{{s.partTypeByDivisibility}}</td>
             <td>{{s.manufacturer}}</td>
             <td>{{s.nameOfThePartByShapeMethodOfManufactureAndMaterial}}</td>
-            <td>{{s.numberDetails}}</td>
+<!--            <td>{{s.numberDetails}}</td>-->
+            <td>
+                <button class="btn btn-primary" ng-click="changeNumber(s.id, -1)">-</button>
+                {{s.numberDetails}}
+                <button class="btn btn-primary" ng-click="changeNumber(s.id, 1)">+</button>
+            </td>
             <td>{{s.nameDetails}}</td>
-<!--            <td>-->
-<!--                <button class="btn btn-primary" ng-click="changeScore(s.id, -1)">-</button>-->
-<!--                {{s.nameDetails}}-->
-<!--                <button class="btn btn-primary" ng-click="changeScore(s.id, 1)">+</button>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--                <button class="btn btn-danger" ng-click="deleteStudent(s.id)">Исключить</button>-->
-<!--            </td>-->
+
+            <td>
+                <button class="btn btn-danger" ng-click="deleteNumberDecimal(s.id)">Исключить</button>
+            </td>
         </tr>
         </tbody>
     </table>

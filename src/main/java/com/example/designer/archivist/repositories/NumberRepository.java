@@ -1,6 +1,6 @@
-package com.example.designer.archivist.controllers.repositories;
+package com.example.designer.archivist.repositories;
 
-import com.example.designer.archivist.controllers.model.NumbersDecimal;
+import com.example.designer.archivist.model.NumbersDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -28,8 +28,12 @@ public class NumberRepository {
     public NumbersDecimal findById(Long id) {
         return numbersDecimals.stream().filter(s -> s.getId().equals(id)).findFirst().orElseThrow(() -> new RuntimeException("Number not found"));
     }
+//
+//    public void add(NumbersDecimal numbersDecimal) {
+//        numbersDecimals.add(numbersDecimal);
+//    }
 
-    public void add(NumbersDecimal numbersDecimal) {
-        numbersDecimals.add(numbersDecimal);
+    public void deleteById(Long id) {
+        numbersDecimals.removeIf(s-> s.getId().equals(id));
     }
 }

@@ -8,25 +8,24 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
             });
     };
 
-//    $scope.deleteStudent = function (studentId) {
-//        $http.get(contextPath + '/students/delete/' + studentId)
-//            .then(function (response) {
-//                $scope.loadStudents();
-//            });
-//    }
-//
-//    $scope.changeScore = function (studentId, delta) {
-//        $http({
-//            url: contextPath + '/students/change_score',
-//            method: 'GET',
-//            params: {
-//                studentId: studentId,
-//                delta: delta
-//            }
-//        }).then(function (response) {
-//            $scope.loadStudents();
-//        });
-//    }
+    $scope.deleteNumberDecimal = function (numberId) {
+        $http.get(contextPath + '/numbers/delete/' + numberId)
+            .then(function (response) {
+                $scope.loadNumbers();
+            });
+    }
+    $scope.changeNumber = function (numberId, delta) {
+        $http({
+            url: contextPath + '/numbers/change_number',
+            method: 'GET',
+            params: {
+                numberId: numberId,
+                delta: delta
+            }
+        }).then(function (response) {
+            $scope.loadNumbers();
+        });
+    }
 
     $scope.loadNumbers();
 });
